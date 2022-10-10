@@ -1,1 +1,44 @@
 
+main {
+  min-height: 80vh;
+}
+
+h3 {
+  padding: 1rem 0;
+}
+
+h1 {
+  font-size: 1.4rem;
+  padding: 1rem 0;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+}
+
+h2 {
+  font-size: 1.4rem;
+  padding: 0.5rem 0;
+}
+
+.rating span {
+  margin: 0.1rem;
+}
+
+.csHover:hover {
+  transform: scale(1.04);
+}
+
+.productImage {
+  padding: 2rem;
+}
+
+.cartTotal {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+}
+
+.loader {
+  margin: auto;
+  margin-top: 5rem;
+}
+
+.loginLoader{
+  
+}
