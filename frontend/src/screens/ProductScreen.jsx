@@ -45,12 +45,12 @@ const ProductScreen = () => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <Row>
-          <Col md={6} className='bg-info card'>
+          <Col md={6} className='card'>
             <Image
               src={product.image}
               alt={product.name}
               fluid
-              className='productImage bg-info'
+              className='productImage '
             />
           </Col>
           <Col md={3}>
