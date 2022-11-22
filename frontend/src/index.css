@@ -26,8 +26,8 @@ h2 {
   transform: scale(1.04);
 }
 
-.productImage {
-  padding: 2rem;
+.navbarBrand.navbarBrandPadding {
+  padding: 0;
 }
 
 .cartTotal {
@@ -39,6 +39,6 @@ h2 {
   margin-top: 5rem;
 }
 
-.loginLoader{
-  
+.paypalButtonGroup {
+  padding: 2rem 1rem !important;
 }
