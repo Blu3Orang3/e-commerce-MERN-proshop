@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation,useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
@@ -11,25 +11,25 @@ const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const userLogin = useSelector(state => state.userLogin)
-  const {loading, error, userInfo} = userLogin 
+  const userLogin = useSelector((state) => state.userLogin);
+  const { loading, error, userInfo } = userLogin;
 
   let location = useLocation();
-  const redirect = location.search ? location.search.split('=')[1] : '/'
+  const redirect = location.search ? location.search.split("=")[1] : "/";
 
-  let navigate = useNavigate()
+  let navigate = useNavigate();
   useEffect(() => {
-    if(userInfo) {
-      navigate(redirect)
+    if (userInfo) {
+      navigate(redirect);
     }
-  },[userInfo,navigate,redirect ])
+  }, [userInfo, navigate, redirect]);
 
   const submitHandler = (e) => {
-    e.preventDefault()
-    dispatch(login(email,password))
-  }
+    e.preventDefault();
+    dispatch(login(email, password));
+  };
 
   return (
     <FormContainer>
@@ -37,7 +37,7 @@ const LoginScreen = () => {
       {error && <Message variant='danger'>{error}</Message>}
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='email'>
-          <Form.Label>Email Adress</Form.Label>
+          <Form.Label>Email Address</Form.Label>
           <Form.Control
             type='email'
             placeholder='Enter email'
