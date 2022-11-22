@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+
 import dotenv from "dotenv";
 import users from "./data/users.js";
 import products from "./data/products.js";
@@ -42,7 +42,7 @@ const destroyData = async () => {
     await Product.deleteMany();
     await User.deleteMany();
 
-    console.log("Data Destroyes!".red.inverse);
+    console.log("Data Destroyed!".red.inverse);
     process.exit();
   } catch (error) {
     console.log(`${error}`.red.inverse);
