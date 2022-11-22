@@ -1,5 +1,3 @@
-import store from "./store";
-import { Provider } from "react-redux";
 import { Container } from "react-bootstrap";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
@@ -11,16 +9,26 @@ import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import ShippingScreen from "./screens/ShippingScreen";
+import PaymentScreen from "./screens/PaymentScreen";
+import PlaceOrderScreen from "./screens/PlaceOrderScreen";
+import OrderScreen from "./screens/OrderScreen";
+import UserListScreen from "./screens/UserListScreen";
+import UserEditScreen from "./screens/UserEditScreen";
+import ProductListScreen from "./screens/ProductListScreen";
+import ProductEditScreen from "./screens/ProductEditScreen";
 
 function App() {
   return (
-    <Provider store={store}>
       <Router>
         <Header />
         <main className='py-3'>
           <Container>
             <Routes>
+              <Route path='/order/:id' element={<OrderScreen />} />
+              <Route path='/order' element={<OrderScreen />} />
               <Route path='/shipping' element={<ShippingScreen />} />
+              <Route path='/placeorder' element={<PlaceOrderScreen />} />
+              <Route path='/payment' element={<PaymentScreen />} />
               <Route path='/login' element={<LoginScreen />} />
               <Route path='/register' element={<RegisterScreen />} />
               <Route path='/profile' element={<ProfileScreen />} />
@@ -28,13 +36,16 @@ function App() {
               <Route path='/product/:id' element={<ProductScreen />} />
               <Route path='/cart' element={<CartScreen />} exact />
               <Route path='/cart/:id' element={<CartScreen />} />
+              <Route path='/admin/userlist' element={<UserListScreen />} />
+              <Route path='/admin/productlist' element={<ProductListScreen />} />
+              <Route path='/admin/product/:id/edit' element={<ProductEditScreen />} />
+              <Route path='/user/:id/edit' element={<UserEditScreen />} />
               <Route path='/' element={<HomeScreen />} exact />
             </Routes>
           </Container>
         </main>
         <Footer />
       </Router>
-    </Provider>
   );
 }
 
