@@ -18,7 +18,7 @@ const Header = () => {
         <Container>
           <LinkContainer to='/' >
             <Navbar.Brand className="navbarBrand navbarBrandPadding">
-            <img src={"../../brand_logo.svg"} width="60" height="60" alt="" />
+            <h1>Proshop</h1>
             </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
